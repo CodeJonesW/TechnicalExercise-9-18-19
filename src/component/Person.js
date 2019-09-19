@@ -4,7 +4,7 @@ class Person extends Component {
 
     render() {
         return (
-            <div id="person" style={{margin: "10px", borderStyle: "groove", padding: "10px", borderRadius: "5px"}}>
+            <div id="person" style={{margin: "10px", borderStyle: "groove", padding: "10px", borderRadius: "5px", width: "400px"}}>
                 <h4>Name: {this.props.info.display_name}</h4>
                     <ul>
                         <li>

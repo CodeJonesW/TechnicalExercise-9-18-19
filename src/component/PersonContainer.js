@@ -10,7 +10,7 @@ class People extends Component {
     }
 
     findCharacterFrequency(people) {
-        
+
         let listOfEmails = []
         let output =[]
         let counter = {}
@@ -22,32 +22,49 @@ class People extends Component {
         })
         
         listOfEmails.map((email) => {
-            
             for(let x = 0 ; x < email.length; x++) {
                 let character = email.charAt(x);
-                counter[character] = (isNaN(counter[character]) ? 1 : counter[character] + 1)
+                    counter[character] = (isNaN(counter[character]) ? 1 : counter[character] + 1)
             }
             output.push(counter);
         });
-        console.log(counter)
+
+        let array = [];
+            for (var char in counter) {
+                array.push([char, counter[char]]);
+            }
+        array.sort(function(a, b) {
+            return a[1] - b[1];
+        });
+        
+        console.log(array)
     }
+
+
 
     render() {
         let people = this.props.allPeople.data ? this.props.allPeople.data : null
         return (
-            <div style={{margin: "20px"}}>
-                
-                <h3>List of People</h3>
+            <div>
+                <div style={{margin: "20px"}}>
+                    
+                    <h3>List of People</h3>
 
-                <div>
-                    <button onClick={() => this.findCharacterFrequency(people)}>Find Character Frequency</button>
+                    <div>
+                        <button onClick={() => this.findCharacterFrequency(people)}>Find Character Frequency</button>
+                    </div>
+
+                    {people ? people.map(obj => {
+                        return <div id={obj.id}> <Person key={obj.id} info={obj} /> </div>
+                    }) : null}
+
+            
                 </div>
 
-                {people ? people.map(obj => {
-                    return <div id={obj.id}> <Person key={obj.id} info={obj} /> </div>
-                }) : null}
+                <div>
+                
+                </div>
 
-           
             </div>
             
         )
