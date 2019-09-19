@@ -39,3 +39,5 @@ E : 60
 
 
 This application uses a React front end to render components for each person object returned from the Salesloft API. All the people are held within a people container component that allows for an organized simple component structure. The fetch to our API data is held at the top app level and passed to the people container through props. Each person component is rendered by mapping over the set of people data and rendering each person's specific name, email and job title. The character frequency button, located in top right, sorts the characters by frequency count.
+
+Constructed by: William Jones
