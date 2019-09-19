@@ -2,7 +2,7 @@ A Simple Web Application
 
 This application has two features:
 
-The app shows a list of People records that are available via the SalesLoft API using the API key in recieved in the technical assement email. In that list, the app displays each person’s name, email address, and job title.
+The app shows a list of People records that are available via the SalesLoft API using the API key recieved in the technical assement email. In that list, the app displays each person’s name, email address, and job title.
 
 The app has a button that, when clicked, displays a frequency count of all the unique characters in all the email addresses of all the People accessed from the api and sorts the characters by frequency count.
 
