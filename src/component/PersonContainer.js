@@ -5,7 +5,8 @@ class People extends Component {
     constructor() {
         super()
         this.state = {
-            people: []
+            people: [],
+            visible: false
         }
     }
 
@@ -38,12 +39,10 @@ class People extends Component {
         })
         this.setState({
             ...this.state,
-            characterList: array
+            characterList: array,
+            visible: !this.state.visible
+
         })
-
-
-
-        console.log(array)
     }
 
 
@@ -75,7 +74,7 @@ class People extends Component {
 
                 <div style={{ position: 'absolute', left: '600px', top: '100px' }}>
                     <ul>
-                        {list}
+                        {this.state.visible ? list : null}
                     </ul>
                 </div>
 

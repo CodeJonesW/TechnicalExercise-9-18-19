@@ -12,8 +12,9 @@ code {
     monospace;
 }
 
-#person {
+.person {
   margin: "10px";
   border-style: "inset";
   padding: "10px";
 }
+
