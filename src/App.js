@@ -27,9 +27,12 @@ class App extends Component {
 
   render() {
     return (
-      <div id='simpleApp' style={{ margin: "20px" }} >
+      <div id='simpleApp' style={{ margin: "20px" }}>
+
         <h1>A Simple Web Application</h1>
+
         <People allPeople={this.state.people} />
+
       </div>
     )
   }

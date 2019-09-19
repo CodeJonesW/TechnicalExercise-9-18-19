@@ -49,10 +49,13 @@ class People extends Component {
 
 
     render() {
+
         let people = this.props.allPeople.data ? this.props.allPeople.data : null
+
         let list = this.state.characterList ? this.state.characterList.map(char => {
-            return <li>{char[0]}, {char[1]}</li>
+            return <li> {char[0].toUpperCase()} : {char[1]}</li>
         }) : null
+
         return (
             <div>
                 <div style={{ margin: "20px" }}>
@@ -60,7 +63,7 @@ class People extends Component {
                     <h3>List of People</h3>
 
                     <div>
-                        <button onClick={() => this.findCharacterFrequency(people)} style={{ position: 'absolute', left: '600px', top: '80px' }}>Find Email Character Frequency</button>
+                        {this.state.people ? <button onClick={() => this.findCharacterFrequency(people)} style={{ position: 'absolute', left: '600px', top: '80px' }}>Find Email Character Frequency</button> : null}
                     </div>
 
                     {people ? people.map(obj => {
