@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Person from './Person'
+import { Table, Button } from "react-bootstrap"
 
 class People extends Component {
     constructor() {
@@ -24,18 +25,18 @@ class People extends Component {
 
         listOfEmails.map((email) => {
             for (let x = 0; x < email.length; x++) {
-                let character = email.charAt(x);
+                let character = email.charAt(x)
                 counter[character] = (isNaN(counter[character]) ? 1 : counter[character] + 1)
             }
-            output.push(counter);
+            output.push(counter)
         });
 
         let array = [];
-        for (var char in counter) {
-            array.push([char, counter[char]]);
+        for (let char in counter) {
+            array.push([char, counter[char]])
         }
         array.sort(function (a, b) {
-            return a[1] - b[1];
+            return a[1] - b[1]
         })
         this.setState({
             ...this.state,
@@ -52,30 +53,47 @@ class People extends Component {
         let people = this.props.allPeople.data ? this.props.allPeople.data : null
 
         let list = this.state.characterList ? this.state.characterList.map(char => {
-            return <li> {char[0].toUpperCase()} : {char[1]}</li>
+            return <tr><td> {char[0].toUpperCase()}</td> <td> {char[1]}</td></tr>
         }) : null
 
         return (
             <div>
+                <div className="frequency">
+                    {people ? <Button size="sm" className="button" onClick={() => this.findCharacterFrequency(people)}
+                    >Find Email Character Frequency</Button> : null}
+                </div>
+
                 <div style={{ margin: "20px" }}>
 
                     <h3>List of People</h3>
 
-                    <div>
-                        {this.state.people ? <button onClick={() => this.findCharacterFrequency(people)} style={{ position: 'absolute', left: '600px', top: '80px' }}>Find Email Character Frequency</button> : null}
-                    </div>
-
                     {people ? people.map(obj => {
                         return <div id={obj.id}> <Person key={obj.id} info={obj} /> </div>
                     }) : null}
-
-
                 </div>
 
-                <div style={{ position: 'absolute', left: '600px', top: '100px' }}>
-                    <ul>
-                        {this.state.visible ? list : null}
-                    </ul>
+
+                <div style={{ position: 'absolute', left: '600px', top: '140px' }}>
+
+                    {this.state.visible ?
+                        <Table bordered hover className="table">
+                            <thead>
+                                <th>
+                                    Character
+                                </th>
+
+                                <th>
+                                    Frequency
+                                </th>
+
+                            </thead>
+
+                            <tbody>
+                                {list}
+                            </tbody>
+
+                        </Table>
+                        : null}
                 </div>
 
             </div>
