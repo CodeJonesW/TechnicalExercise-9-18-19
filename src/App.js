@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import People from './component/PersonContainer'
+import People from './component/PeopleContainer'
 
 const APIKEY = process.env.REACT_APP_PROTECT_KEY
 const PROXY = "https://cors-anywhere.herokuapp.com/"

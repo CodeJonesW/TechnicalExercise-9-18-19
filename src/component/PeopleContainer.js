@@ -68,23 +68,25 @@ class People extends Component {
                     <h3>List of People</h3>
 
                     {people ? people.map(obj => {
-                        return <div id={obj.id}> <Person key={obj.id} info={obj} /> </div>
+                        return <div> <Person key={obj.id} info={obj} /> </div>
                     }) : null}
                 </div>
 
 
-                <div style={{ position: 'absolute', left: '600px', top: '140px' }}>
+                <div style={{ position: 'absolute', left: '600px', top: '150px' }}>
 
                     {this.state.visible ?
                         <Table bordered hover className="table">
                             <thead>
-                                <th>
-                                    Character
-                                </th>
+                                <tr>
+                                    <th>
+                                        Character
+                                    </th>
 
-                                <th>
-                                    Frequency
-                                </th>
+                                    <th>
+                                        Frequency
+                                    </th>
+                                </tr>
 
                             </thead>
 
