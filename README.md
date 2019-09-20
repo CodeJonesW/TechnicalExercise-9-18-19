@@ -14,4 +14,7 @@ This application uses a React front end to render components for each person obj
 
 React Bootstrap is used to to render both a button and simple table element.
 
+Click [this!](https://salesloftsimpleapp.web.app/) for live application
+
+
 Constructed by: William Jones
