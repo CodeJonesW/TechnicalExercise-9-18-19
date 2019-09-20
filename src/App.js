@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import People from './component/PersonContainer'
 
 const APIKEY = process.env.REACT_APP_PROTECT_KEY
